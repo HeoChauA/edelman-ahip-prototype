@@ -1,0 +1,186 @@
+.get-updates {
+  background-color: $bg-form;
+  padding-bottom: rem(19px);
+  padding-top: rem(38px);
+
+  @include breakpoint(desktop) {
+    padding-bottom: rem(9px);
+  }
+
+  .form {
+    &__title {
+      font-size: rem(30px);
+      letter-spacing: rem(2px);
+      text-align: center;
+      text-transform: uppercase;
+
+      @include breakpoint(tablet) {
+        font-size: rem(40px);
+      }
+
+      @include breakpoint(desktop) {
+        font-size: rem(44px);
+        margin-bottom: rem(26px);
+      }
+    }
+
+    &__description {
+      line-height: rem(30px);
+      margin-bottom: rem(49px);
+      padding: 0 7.3%;
+      text-align: center;
+    }
+
+    &__fields {
+      padding-left: rem(8px);
+    }
+  }
+
+  &-form {
+    padding-bottom: rem(110px);
+    position: relative;
+
+    .nf-hp {
+      height: 0;
+      position: absolute;
+      right: -9999px;
+      visibility: hidden;
+    }
+
+    > .nf-fields {
+      margin: 0;
+      max-width: 100%;
+      padding: 0;
+      text-align: center;
+    }
+
+    @include breakpoint(desktop) {
+      padding-bottom: rem(10px);
+    }
+
+    nf-fields-wrap {
+      margin: auto;
+      > div {
+        display: block;
+        line-height: 0;
+        margin-bottom: rem(40px);
+        position: relative;
+        width: 100%;
+
+        &:last-of-type {
+          position: static;
+        }
+
+        > .nf-field {
+          padding: 0;
+        }
+
+        .nf-error-wrap {
+          @include transition(all 0.5s);
+          line-height: $base-line-height;
+          opacity: 0;
+          position: absolute;
+          top: 80%;
+          z-index: 9;
+        }
+
+        .field-wrap.nf-error {
+          .nf-error-wrap {
+            opacity: 1;
+            top: 100%;
+          }
+        }
+
+        @include breakpoint(tablet) {
+
+        }
+
+        @include breakpoint(desktop) {
+          display: inline-block;
+          margin-bottom: rem(10px);
+          @include span(8 of 27 0.5);
+          float: none;
+          max-width: rem(340px);
+
+          &:first-of-type {
+            margin-left: 0;
+          }
+
+          &:last-child {
+            @include span(last 3 of 27 0.5);
+            float: none;
+          }
+
+          .field-wrap.nf-error {
+            .nf-error-wrap {
+              top: 85%;
+            }
+          }
+        }
+      }
+    }
+
+    .field-wrap  {
+      input[type*="email"],
+      input[type*="text"] {
+        background-color: $white;
+        border-color: $bd-form-color;
+        border-style: solid;
+        border-width: 0 0 1px 0;
+        color: $text-main-color;
+        font-size: rem(14px);
+        font-weight: 700;
+        line-height: $base-line-height;
+        padding: rem(26px 19px 23px);
+        text-transform: uppercase;
+        width: 100%;
+      }
+    }
+
+    .form {
+      &__submit {
+        text-align: left;
+        input[type*="button"] {
+          @extend .button;
+          @include border-radius(0);
+          border: none;
+          font-size: rem(14px);
+          font-weight: 700;
+          text-transform: uppercase;
+          line-height: $base-line-height;
+          padding: rem(26px 19px 23px);
+          text-align: center;
+          width: 100%;
+          @include breakpoint(desktop) {
+            width: auto;
+          }
+        }
+
+        .nf-field-submit-error {
+          bottom: 0;
+          left: 0;
+          line-height: $base-line-height;
+          position: absolute;
+          right: 0;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+.home,
+.front {
+  .get-updates {
+    background-color: $white;
+
+    &-form {
+      .field-wrap  {
+        input[type*="email"],
+        input[type*="text"] {
+          background-color: $bg-form;
+        }
+      }
+    }
+  }
+}

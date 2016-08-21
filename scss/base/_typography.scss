@@ -1,0 +1,60 @@
+// TYPOGRAPHY
+// Define all typographic styles in this file.
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: $font-normal;
+}
+
+h2 {
+  @include cinzel();
+  color: $blue-dark;
+  @include breakpoint(tablet) {
+    font-size: rem(40px);
+  }
+}
+
+a {
+  color: $link-color;
+  outline: none !important;
+  text-decoration: none;
+
+  &:hover {
+    color: $link-hover;
+  }
+}
+
+p {
+  margin-bottom: rem(20px);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.pager {
+  overflow: hidden;
+
+  li {
+    display: inline-block;
+    float: left;
+    margin: rem(0 5px);
+  }
+}
+
+.form-text {
+  border-bottom: 1px solid $gray-d5;
+  border-left: none;
+  border-top: none;
+  color: $gray-38;
+  font-size: rem(14px);
+  font-weight: bold;
+  margin-bottom: rem(10px);
+  padding: rem(25px 20px);
+  text-transform: uppercase;
+}

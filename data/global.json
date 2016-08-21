@@ -1,0 +1,49 @@
+{
+   "site_title": "FFW Prototype",
+   "img_path": "images/",
+   "prototype_nav":[
+      {
+         "name":"Home",
+         "link":"index.html"
+      },
+      {
+         "name":"Style Guide",
+         "link":"styleguide.html"
+      },
+      {
+         "name":"Contact Us",
+         "link":"contactus.html"
+      },
+      {
+         "name":"Key Facts",
+         "link":"keyfacts.html"
+      },
+      {
+         "name":"FAQ",
+         "link":"faq.html"
+      },
+      {
+         "name":"Perfomance",
+         "link":"performance.html"
+      },
+      {
+         "name":"Leadership",
+         "link":"leadership.html"
+      },
+      {
+         "name":"Latest Updates",
+         "link":"latestupdates.html"
+      },
+      {
+         "name":"How to vote",
+         "link":"howtovote.html"
+      }
+   ],
+   "posts": [
+      {
+         "thumbnail":"images/header.png",
+         "title": "Post title"
+      }
+   ],
+   "body_class": ""
+}

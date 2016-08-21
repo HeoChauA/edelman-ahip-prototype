@@ -1,0 +1,109 @@
+//Clearfix
+
+%clearfix {
+  &:before,
+  &:after {
+    content: '';
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+%title-small,
+.title-small {
+  line-height: rem(29px);
+  margin-bottom: rem(20px);
+
+  @include breakpoint(tablet) {
+    margin-bottom: rem(30px);
+  }
+
+  @include breakpoint(desktop) {
+    margin-bottom: rem(52px);
+  }
+}
+
+%title-big,
+.title-big {
+  @include cinzel;
+  color: $title-color;
+  font-size: rem(30px);
+  line-height: rem(30px);
+  margin-bottom: rem(10px);
+  text-transform: uppercase;
+
+  @include breakpoint(tablet) {
+    font-size: rem(40px);
+    line-height: rem(40px);
+    margin-bottom: rem(20px);
+  }
+
+  @include breakpoint(desktop) {
+    font-size: rem(50px);
+    line-height: rem(50px);
+    margin-bottom: rem(30px);
+  }
+}
+
+%animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  -webkit-animation-timing-function: ease;
+
+  visibility: visible !important;
+  display: inherit !important;
+}
+
+@-webkit-keyframes fadeInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -5%, 0);
+    transform: translate3d(0, -5%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -5%, 0);
+    transform: translate3d(0, -5%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+.fadeInDown {
+  @extend %animated;
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+}
+
+.filtered {
+  &-hide {
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
+    display: none !important;
+    padding: 0;
+  }
+
+  &-show {
+    height: inherit;
+    opacity: 1;
+    visibility: visible;
+  }
+}

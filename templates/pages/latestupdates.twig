@@ -1,0 +1,32 @@
+
+{% extends '../layouts/layout.twig' %}
+
+{% block title %}Latest Updates{% endblock %}
+
+{% block page_heading %}Latest Updates{% endblock %}
+
+{% block feature %}
+  <div class="feature">
+  {% for post in posts %}
+      <div class="page__title__wrap clearfix">
+        <div class="page__title__image" style="background-image: url({{ post.thumbnail }})"> </div>
+        <div class="page__title__container container">
+        <h1 class="page__title">Latest Updates</h1>
+        </div>
+      </div>
+  {% endfor %}
+  {% include '../components/filter.twig' %}
+  </div>
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+    {% include '../components/news.twig' %}
+  </div>
+{% endblock %}
+
+{% block footer_scripts %}
+  {{ parent() }}
+{% endblock %}
+
+{% block content_sidebar %}{% endblock %}
